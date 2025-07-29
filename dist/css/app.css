@@ -1,10 +1,23 @@
+.button {
+  padding: 0.5em 1em;
+  border-radius: 2rem;
+  font-size: 1.8rem;
+  background-color: -bg;
+  color: -color;
+  border: 1px solid -border;
+}
+.button:hover, .button:focus, .button:focus-visible {
+  background-color: -hover-bg;
+  color: -hover-color;
+  border: 1px solid -hover-border;
+}
+
 .grid {
   display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, max(28rem, (100% - 3rem) / 3)), 1fr));
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, max(35rem, (100% - 6rem) / 3)), 1fr));
 }
 .grid-item {
-  border: 1px solid var(--color-10);
   padding: 1rem;
 }
 
@@ -146,8 +159,12 @@ picture {
 }
 
 :root {
-  --color-1: #fff;
-  --color-10: #000;
+  --color-main-green: #03624c;
+  --color-main-yellow: #f1d302;
+  --color-main-gray: #c7d6d5;
+  --color-main-white: #ecebf3;
+  --color-secondary-white: #fff;
+  --color-secondary-black: #000;
 }
 
 /*
@@ -229,10 +246,12 @@ p {
 }
 
 .header {
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   padding-block: 1.5rem;
+  background-color: var(--color-main-green);
 }
 .header__container {
   display: flex;
@@ -240,8 +259,9 @@ p {
   align-items: center;
 }
 .header__logo {
-  color: var(--color-1);
+  color: var(--color-main-yellow);
   font-size: 2.5rem;
+  font-weight: bold;
 }
 .header__toggle {
   display: flex;
@@ -264,7 +284,7 @@ p {
   display: block;
   width: 30px;
   height: 3px;
-  background: black;
+  background: var(--color-main-yellow);
   border-radius: 3px;
   transition: all 0.3s ease-in-out;
 }
@@ -273,7 +293,7 @@ p {
   display: block;
   width: 30px;
   height: 3px;
-  background: black;
+  background: var(--color-main-yellow);
   border-radius: 3px;
   transition: all 0.3s ease-in-out;
   position: absolute;
@@ -307,7 +327,7 @@ p {
     align-items: center;
     transform: translateX(100%);
     transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1);
-    background-color: white;
+    background-color: var(--color-main-green);
     z-index: 100;
   }
 }
@@ -319,7 +339,7 @@ p {
 }
 .header__link {
   font-size: 2.2rem;
-  color: var(--color-1);
+  color: var(--color-main-yellow);
 }
 .header__link:hover, .header__link:focus, .header__link:focus-visible {
   outline: none;

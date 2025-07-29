@@ -1,0 +1,38 @@
+/*
+
+:root {
+  --theme: light;
+  color-scheme: light;
+
+  @media (prefers-color-scheme: dark) {
+    --theme: dark;
+    color-scheme: dark;
+  }
+}
+
+:root:has([value="light"]:checked) {
+  --theme: light;
+  color-scheme: light;
+}
+
+:root:has([value="dark"]:checked) {
+  --theme: dark;
+  color-scheme: dark;
+}
+
+/*
+body {
+    /*
+    
+    --- Espacio para los colores del tema Claro
+
+    */
+
+/*
+    @container style(--theme: dark;) {
+
+    --- Espacio para los colores del tema Oscuro
+
+    }
+}
+*/

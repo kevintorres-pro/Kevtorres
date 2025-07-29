@@ -1,0 +1,71 @@
+/*
+:root {
+    --font-titles: ;
+    --font-texts: ;
+}
+
+@font-face {
+    font-family: ;
+    font-weight: ;
+    font-style: ;
+    font-display: swap;
+    src: url();
+}
+
+@font-face {
+    font-family: ;
+    font-weight: ;
+    font-style: ;
+    font-display: swap;
+    src: url();
+}
+*/
+
+@mixin heading($font-size) {
+  //font-family: ;
+  text-wrap: balance;
+  font-weight: bold;
+  font-size: $font-size;
+  text-align: center;
+
+  @media (width > 768px) {
+    text-align: left;
+  }
+}
+
+@mixin paragraph {
+  //font-family: ;
+  font-size: 2rem;
+  margin-block: 2rem;
+  text-wrap: stable;
+  text-align: center;
+
+  @media (width > 768px) {
+    text-align: left;
+  }
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+h1 {
+  @include heading(4.2rem);
+}
+
+h2 {
+  @include heading(3.6rem);
+}
+
+h3 {
+  @include heading(2.8rem);
+}
+
+p {
+  @include paragraph;
+}
+
+.min-text {
+  font-size: 1.7rem;
+}

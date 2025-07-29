@@ -1,0 +1,379 @@
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, max(28rem, (100% - 3rem) / 3)), 1fr));
+}
+.grid-item {
+  border: 1px solid var(--color-10);
+  padding: 1rem;
+}
+
+input,
+button,
+select,
+textarea {
+  font: inherit;
+}
+
+form {
+  display: grid;
+  gap: 1rem;
+}
+@media (width > 720px) {
+  form {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.contact-form button {
+  grid-column: 1/-1;
+  justify-self: end;
+}
+
+.form-group {
+  display: grid;
+  gap: 0.5cap;
+}
+.form-group:has(.fine-print) {
+  grid-column: 1/-1;
+  display: flex;
+  gap: 1ch;
+}
+
+label {
+  text-transform: uppercase;
+  font-size: 1rem;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
+input {
+  background: var(--color-1);
+  color: var(--color-10);
+  border: 1px solid var(--color-10);
+  border-radius: 16px;
+  padding: 1ex 2ex;
+  accent-color: var(--color-10);
+}
+input:not([type=checkbox]) {
+  width: 100%;
+}
+
+input[type=text],
+[type=email],
+[type=tel] {
+  outline: 4px solid var(--color-10);
+}
+input[type=text]:not(:-moz-placeholder):valid, [type=email]:not(:-moz-placeholder):valid, [type=tel]:not(:-moz-placeholder):valid {
+  outline-color: greenyellow;
+}
+input[type=text]:not(:placeholder-shown):valid,
+[type=email]:not(:placeholder-shown):valid,
+[type=tel]:not(:placeholder-shown):valid {
+  outline-color: greenyellow;
+}
+input[type=text]:not(:-moz-placeholder):invalid, [type=email]:not(:-moz-placeholder):invalid, [type=tel]:not(:-moz-placeholder):invalid {
+  outline-color: red;
+}
+input[type=text]:not(:placeholder-shown):invalid,
+[type=email]:not(:placeholder-shown):invalid,
+[type=tel]:not(:placeholder-shown):invalid {
+  outline-color: red;
+}
+input[type=text]:focus:invalid,
+[type=email]:focus:invalid,
+[type=tel]:focus:invalid {
+  outline-color: yellow;
+}
+
+.content-center {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+* {
+  margin: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  font-size: 62.5%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+    interpolate-size: allow-keywords;
+  }
+}
+body {
+  font-size: 1.6rem;
+  -webkit-font-smoothing: antialiased;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+img,
+picture {
+  display: block;
+  max-width: 100%;
+}
+
+::-moz-selection {
+  background: var(--color-10);
+  color: var(--color-1);
+}
+
+::selection {
+  background: var(--color-10);
+  color: var(--color-1);
+}
+
+:root {
+  --color-1: #fff;
+  --color-10: #000;
+}
+
+/*
+:root {
+    --font-titles: ;
+    --font-texts: ;
+}
+
+@font-face {
+    font-family: ;
+    font-weight: ;
+    font-style: ;
+    font-display: swap;
+    src: url();
+}
+
+@font-face {
+    font-family: ;
+    font-weight: ;
+    font-style: ;
+    font-display: swap;
+    src: url();
+}
+*/
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+h1 {
+  text-wrap: balance;
+  font-weight: bold;
+  font-size: 4.2rem;
+  text-align: center;
+}
+@media (width > 768px) {
+  h1 {
+    text-align: left;
+  }
+}
+
+h2 {
+  text-wrap: balance;
+  font-weight: bold;
+  font-size: 3.6rem;
+  text-align: center;
+}
+@media (width > 768px) {
+  h2 {
+    text-align: left;
+  }
+}
+
+h3 {
+  text-wrap: balance;
+  font-weight: bold;
+  font-size: 2.8rem;
+  text-align: center;
+}
+@media (width > 768px) {
+  h3 {
+    text-align: left;
+  }
+}
+
+p {
+  font-size: 2rem;
+  margin-block: 2rem;
+  text-wrap: stable;
+  text-align: center;
+}
+@media (width > 768px) {
+  p {
+    text-align: left;
+  }
+}
+
+.min-text {
+  font-size: 1.7rem;
+}
+
+.header {
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-block: 1.5rem;
+}
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__logo {
+  color: var(--color-1);
+  font-size: 2.5rem;
+}
+.header__toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+}
+@media (width > 868px) {
+  .header__toggle {
+    display: none;
+  }
+}
+.header__toggle .hamburger {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background: black;
+  border-radius: 3px;
+  transition: all 0.3s ease-in-out;
+}
+.header__toggle .hamburger::before, .header__toggle .hamburger::after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 3px;
+  background: black;
+  border-radius: 3px;
+  transition: all 0.3s ease-in-out;
+  position: absolute;
+}
+.header__toggle .hamburger::before {
+  transform: translateY(-10px);
+}
+.header__toggle .hamburger::after {
+  transform: translateY(10px);
+}
+.header__toggle.is-active .hamburger {
+  background: transparent;
+}
+.header__toggle.is-active .hamburger::before {
+  transform: rotate(45deg);
+}
+.header__toggle.is-active .hamburger::after {
+  transform: rotate(-45deg);
+}
+.header__menu {
+  display: flex;
+  gap: 2.2rem;
+}
+@media (width < 868px) {
+  .header__menu {
+    flex-direction: column;
+    position: fixed;
+    inset: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+    background-color: white;
+    z-index: 100;
+  }
+}
+.header__menu.is-active {
+  transform: translateX(0);
+}
+.header__item {
+  list-style-type: none;
+}
+.header__link {
+  font-size: 2.2rem;
+  color: var(--color-1);
+}
+.header__link:hover, .header__link:focus, .header__link:focus-visible {
+  outline: none;
+}
+
+.nav {
+  display: flex;
+}
+
+/*
+
+:root {
+  --theme: light;
+  color-scheme: light;
+
+  @media (prefers-color-scheme: dark) {
+    --theme: dark;
+    color-scheme: dark;
+  }
+}
+
+:root:has([value="light"]:checked) {
+  --theme: light;
+  color-scheme: light;
+}
+
+:root:has([value="dark"]:checked) {
+  --theme: dark;
+  color-scheme: dark;
+}
+
+/*
+body {
+    /*
+
+    --- Espacio para los colores del tema Claro
+
+    */
+/*
+    @container style(--theme: dark;) {
+
+    --- Espacio para los colores del tema Oscuro
+
+    }
+}
+*/
+.wrapper {
+  width: min(100% - 35px, 120rem);
+  margin-inline: auto;
+}
+
+.text-container {
+  max-inline-size: 80rem;
+  margin-inline: auto;
+  padding-inline: 1.3rem;
+}
+/*# sourceMappingURL=app.css.map */

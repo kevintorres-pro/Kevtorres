@@ -1,0 +1,22 @@
+$grid-max-col-count: 3;
+$grid-min-col-size: 35rem;
+$grid-gap: 2rem;
+
+$grid-col-size-calc: calc(
+  (100% - $grid-gap * $grid-max-col-count) / $grid-max-col-count
+);
+
+$grid-col-min-size-calc: min(
+  100%,
+  max($grid-min-col-size, $grid-col-size-calc)
+);
+
+.grid {
+  display: grid;
+  gap: $grid-gap;
+  grid-template-columns: repeat(auto-fit, minmax($grid-col-min-size-calc, 1fr));
+
+  &-item {
+    padding: 1rem;
+  }
+}

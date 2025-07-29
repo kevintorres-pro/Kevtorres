@@ -1,0 +1,43 @@
+$button-border-radius: 2rem;
+$button-font-size: 1.8rem;
+$button-padding-y: 0.5em;
+$button-padding-x: 1em;
+
+@mixin button {
+  padding: $button-padding-y $button-padding-x;
+  border-radius: $button-border-radius;
+  font-size: $button-font-size;
+}
+
+@mixin button-variant(
+  $btn-bg,
+  $btn-color,
+  $btn-border: transparent,
+  $btn-hover-bg,
+  $btn-hover-color,
+  $btn-hover-border: transparent
+) {
+  @include button;
+  background-color: $btn-bg;
+  color: $btn-color;
+  border: 1px solid $btn-border;
+
+  &:hover,
+  &:focus,
+  &:focus-visible {
+    background-color: $btn-hover-bg;
+    color: $btn-hover-color;
+    border: 1px solid $btn-hover-border;
+  }
+}
+
+.button {
+  @include button-variant(
+    -bg,
+    -color,
+    -border,
+    -hover-bg,
+    -hover-color,
+    -hover-border
+  );
+}

@@ -1,0 +1,10 @@
+.wrapper {
+  width: min(100% - 35px, 120rem);
+  margin-inline: auto;
+}
+
+.text-container {
+  max-inline-size: 80rem;
+  margin-inline: auto;
+  padding-inline: 1.3rem;
+}

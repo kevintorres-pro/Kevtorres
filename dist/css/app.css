@@ -250,7 +250,7 @@ p {
   top: 0;
   left: 0;
   width: 100%;
-  padding-block: 1.5rem;
+  padding-block: 1.3rem;
   background-color: var(--color-main-green);
 }
 .header__container {
